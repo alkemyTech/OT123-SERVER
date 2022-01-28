@@ -1,19 +1,19 @@
 const db = require('../models')
 
-const { User } = db
+const { Category } = db
 
 exports.findAll = async (req, res) => {
   try {
-    const users = await User.findAll({})
+    const categories = await Category.findAll({})
     res.status(200).json({
       ok: true,
       msg: 'Successful request',
-      result: { users: [...users] },
+      result: { categories: [...categories] },
     })
   } catch (error) {
     res.status(403).json({
       ok: false,
-      msg: error.message,
+      msg: 'You are not authorized to view this information',
       error,
     })
   }
