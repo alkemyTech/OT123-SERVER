@@ -1,7 +1,7 @@
 #!/bin/sh
 ssh ubuntu@localhost <<EOF
     cd ~/alkemy/OT123-SERVER
-    git pull origin release
+    git pull origin main
     curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.38.0/install.sh | bash
     . ~/.nvm/nvm.sh
     # Init pm2
