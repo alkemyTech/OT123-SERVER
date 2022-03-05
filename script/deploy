@@ -7,12 +7,12 @@ ssh ubuntu@localhost <<EOF
     # Init pm2
     # pm2 startup
     # Stopping existing node servers
-    # echo "Stopping any existing node server"
-    # pm2 stop -s alkemy-api || :
-    # pm2 delete -s alkemy-api || :
+    echo "Stopping any existing node server"
+    pm2 stop -s alkemy-api || :
+    pm2 delete -s alkemy-api || :
     echo "Installing dependencies"
-    npm ci
     nvm use 16
+    npm ci
     echo "Decode env files"
     base64 --decode env_encrypted.txt > .env
     base64 --decode env_db_encrypted.txt > .env.db
