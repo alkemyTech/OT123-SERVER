@@ -2,7 +2,7 @@
 
 module.exports = {
   up: async (queryInterface, Sequelize) => {
-    await queryInterface.bulkInsert('Activities', [
+    await queryInterface.bulkInsert('activities', [
       {
         name: 'Apoyo escolar para el nivel Primario',
         content: `Apoyo Escolar para el nivel Primario: 
@@ -55,6 +55,6 @@ module.exports = {
   },
 
   down: async (queryInterface, Sequelize) => {
-    await queryInterface.bulkDelete('Activities', null, {});
+    await queryInterface.bulkDelete('activities', null, {});
   }
 };
